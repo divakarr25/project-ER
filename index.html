@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ta">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- project title -->
+    <title>வாக்காளர் பட்டியல் - Electoral Roll</title>
+    <!-- favotite icon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- css link -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- font link -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="header-box">
+        <h1>🗳️ வாக்காளர் பட்டியல்</h1>
+        <div>சட்டமன்றத் தொகுதி - Electoral Roll</div>
+        <div class="info-grid">
+            <div class="info-card"><strong>சட்டமன்றத் தொகுதியின் எண் மற்றும் பெயர்:</strong><br>167-மன்னார்குடி</div>
+            <div class="info-card"><strong>பிரிவு எண் மற்றும் பெயர்:</strong><br>1-தளிக் காட்டை (வ.கி) மற்றும் (ஊ),
+                கீழத் தெரு வார்டு-1</div>
+        
+            <div class="info-card"><strong>பாகம் எண்:</strong><br>133</div>
+            <div class="info-card"><strong>பட்டியல் வெளியிடப்பட்ட நாள்:</strong><br>06-01-2025</div>
+        </div>
+    </div>
+
+    <div id="statusMessage" class="status-message"></div>
+
+    <div class="upload-section">
+        <div class="file-input-group">
+            <input type="file" id="jsonFile" accept="application/json">
+            <button onclick="handleJSONUpload()" class="export-buttons">📁 Upload JSON</button>
+        </div>
+        <div class="file-input-group">
+            <input type="file" id="excelFile" accept=".xlsx,.xls">
+            <button onclick="handleExcelUpload()" class="export-buttons">📊 Upload
+                Excel</button>
+        </div>
+        <button onclick="clearAllData()" class="export-buttons">🗑️ Clear All</button>
+    </div>
+
+    <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 15px;">
+        <select id="columnSelect" style="padding: 10px; border-radius: 5px; border: 1px solid #cbd56c;">
+            <option value="all">All Columns</option>
+            <option value="1">ID</option>
+            <option value="2">Name</option>
+            <option value="3">Father</option>
+            <option value="4">House</option>
+            <option value="5">Age</option>
+            <option value="6">Gender</option>
+        </select>
+        <input type="text" id="searchBar" placeholder="தேடுங்கள்...">
+        <button onclick="filterTable()" class="export-buttons">🔍
+            Search</button>
+        <button onclick="resetFilters()" class="export-buttons">🔄
+            Reset</button>
+    </div>
+
+    <div id="ageFilter" style="margin: 10px 0; display: none; gap: 10px; align-items: center;">
+        <label for="minAge">வயது (from):</label>
+        <input type="number" id="minAge" placeholder="குறைந்தபட்ச வயது">
+        <label for="maxAge">to:</label>
+        <input type="number" id="maxAge" placeholder="அதிகபட்ச வயது">
+    </div>
+
+    <div class="export-buttons">
+        <button onclick="exportToCSV()">📄 Export to CSV</button>
+        <button onclick="downloadJSON()">📁 Download JSON</button>
+        <button onclick="exportToExcel()">📊 Export to Excel</button>
+        <button onclick="exportToPDF()">📋 Export to PDF</button>
+    </div>
+
+    <table id="voterTable">
+        <thead>
+            <tr>
+                <th>வரிசை எண்</th>
+                <th>அட்டை எண்</th>
+                <th>பெயர்</th>
+                <th>தந்தை / கணவர் பெயர்</th>
+                <th>வீட்டு எண்</th>
+                <th>வயது</th>
+                <th>பாலினம்</th>
+                <th>நடவடிக்கை</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+</body>
+
+</html>
