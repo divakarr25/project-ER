@@ -42,14 +42,16 @@ body {
     text-align: left;
 }
 
-.upload-section{
+.upload-section {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     gap: 10px;
     align-items: center;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
+
 .export-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -62,6 +64,7 @@ body {
     display: flex;
     gap: 6px;
     align-items: center;
+    justify-content: center;
 }
 
 button {
@@ -196,7 +199,7 @@ tr:nth-child(even) {
     }
 
     /* Card-style table rows */
-    table,
+    /* table,
     thead,
     tbody,
     th,
@@ -239,9 +242,60 @@ tr:nth-child(even) {
 
     td:last-child {
         border-bottom: 0;
+    } */
+
+
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 1600px;
+        overflow-x: auto;
+        /* Ensures scroll triggers on smaller screens */
+    }
+
+    th,
+    td {
+        border: 1px solid #ccc;
+        padding: 20px 5px;
+        /* margin: 30px; */
+        text-align: center;
+        white-space: nowrap;
+        /* word-wrap: break-word; */
+    }
+
+    .action-btn {
+        padding: 6px 10px;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        margin: 2px;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+    }
+
+    .save-btn {
+        background-color: #28a745;
+        display: none;
     }
 
     body {
         font-size: 0.95rem;
     }
+
+    .file-input-group {
+        display: flex;
+    }
+
+    #minAge,
+    #maxAge {
+        width: 120px;
+    }
+
 }

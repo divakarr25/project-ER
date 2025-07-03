@@ -23,7 +23,7 @@
             <div class="info-card"><strong>சட்டமன்றத் தொகுதியின் எண் மற்றும் பெயர்:</strong><br>167-மன்னார்குடி</div>
             <div class="info-card"><strong>பிரிவு எண் மற்றும் பெயர்:</strong><br>1-தளிக் காட்டை (வ.கி) மற்றும் (ஊ),
                 கீழத் தெரு வார்டு-1</div>
-        
+
             <div class="info-card"><strong>பாகம் எண்:</strong><br>133</div>
             <div class="info-card"><strong>பட்டியல் வெளியிடப்பட்ட நாள்:</strong><br>06-01-2025</div>
         </div>
@@ -41,12 +41,12 @@
             <button onclick="handleExcelUpload()" class="export-buttons">📊 Upload
                 Excel</button>
         </div>
-    </div>    
-    <div class="upload-section">    
+    </div>
+    <div class="upload-section">
         <button onclick="clearAllData()" class="export-buttons">🗑️ Clear All</button>
     </div>
 
-    <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 15px;">
+    <div class="select-section" style="display: flex; gap: 10px; align-items: center; margin-bottom: 15px;">
         <select id="columnSelect" style="padding: 10px; border-radius: 5px; border: 1px solid #cbd56c;">
             <option value="all">All Columns</option>
             <option value="1">ID</option>
@@ -57,10 +57,6 @@
             <option value="6">Gender</option>
         </select>
         <input type="text" id="searchBar" placeholder="தேடுங்கள்...">
-        <button onclick="filterTable()" class="export-buttons">🔍
-            Search</button>
-        <button onclick="resetFilters()" class="export-buttons">🔄
-            Reset</button>
     </div>
 
     <div id="ageFilter" style="margin: 10px 0; display: none; gap: 10px; align-items: center;">
@@ -70,6 +66,15 @@
         <input type="number" id="maxAge" placeholder="அதிகபட்ச வயது">
     </div>
 
+    <div class="box1" style="display: flex; gap: 10px; align-items: center; justify-content: center;">
+        <button onclick="filterTable()" class="export-buttons">🔍
+            Search</button>
+        <button onclick="resetFilters()" class="export-buttons">🔄
+            Reset</button>
+    </div>
+
+
+
     <div class="export-buttons">
         <button onclick="exportToCSV()">📄 Export to CSV</button>
         <button onclick="downloadJSON()">📁 Download JSON</button>
@@ -77,21 +82,24 @@
         <button onclick="exportToPDF()">📋 Export to PDF</button>
     </div>
 
-    <table id="voterTable">
-        <thead>
-            <tr>
-                <th>வரிசை எண்</th>
-                <th>அட்டை எண்</th>
-                <th>பெயர்</th>
-                <th>தந்தை / கணவர் பெயர்</th>
-                <th>வீட்டு எண்</th>
-                <th>வயது</th>
-                <th>பாலினம்</th>
-                <th>நடவடிக்கை</th>
-            </tr>
-        </thead>
-        <tbody id="tableBody"></tbody>
-    </table>
+
+    <div class="table-container">
+        <table id="voterTable">
+            <thead>
+                <tr>
+                    <th>வரிசை எண்</th>
+                    <th>அட்டை எண்</th>
+                    <th>பெயர்</th>
+                    <th>தந்தை / கணவர் பெயர்</th>
+                    <th>வீட்டு எண்</th>
+                    <th>வயது</th>
+                    <th>பாலினம்</th>
+                    <th>நடவடிக்கை</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
 
     <script src="./script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
