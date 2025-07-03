@@ -198,53 +198,6 @@ tr:nth-child(even) {
         width: 100%;
     }
 
-    /* Card-style table rows */
-    /* table,
-    thead,
-    tbody,
-    th,
-    td,
-    tr {
-        display:block;
-    }
-
-    thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-    }
-
-    tr {
-        border: 1px solid #ddd;
-        margin-bottom: 1em;
-        border-radius: 8px;
-        background: #fff;
-    }
-
-    td {
-        position: relative;
-        padding-left: 50%;
-        text-align: left;
-        border: none;
-        border-bottom: 1px solid #eee;
-        font-size: 0.9rem;
-    }
-
-    td:before {
-        content: attr(data-label);
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        font-weight: bold;
-        width: 45%;
-        white-space: nowrap;
-    }
-
-    td:last-child {
-        border-bottom: 0;
-    } */
-
-
     .table-container {
         width: 100%;
         overflow-x: auto;
@@ -255,7 +208,6 @@ tr:nth-child(even) {
         border-collapse: collapse;
         min-width: 1600px;
         overflow-x: auto;
-        /* Ensures scroll triggers on smaller screens */
     }
 
     th,
