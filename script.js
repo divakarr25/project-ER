@@ -163,7 +163,17 @@ function updateLocalStorage() {
     localStorage.setItem("voterListData", JSON.stringify(data));
 }
 
-function clearAllData() {
+// function clearAllData() {
+//     if (confirm("⚠️ Warning: This will remove all entries permanently. Do you want to proceed?")) {
+//         localStorage.removeItem("voterListData");
+//         document.getElementById("tableBody").innerHTML = "";
+//         data.length = 0;
+//         serialNumber = 1;
+//         showStatus("All data cleared successfully.");
+//     }
+// }
+
+function clearJsonData() {
     if (confirm("⚠️ Warning: This will remove all entries permanently. Do you want to proceed?")) {
         localStorage.removeItem("voterListData");
         document.getElementById("tableBody").innerHTML = "";
@@ -172,6 +182,21 @@ function clearAllData() {
         showStatus("All data cleared successfully.");
     }
 }
+
+function clearExcelData() {
+    if (confirm("⚠️ Warning: This will remove all entries permanently. Do you want to proceed?")) {
+        localStorage.removeItem("voterListData");
+        document.getElementById("tableBody").innerHTML = "";
+        data.length = 0;
+        serialNumber = 1;
+        showStatus("All data cleared successfully.");
+    }
+}
+
+
+
+
+
 
 function editRow(button) {
     const row = button.closest('tr');

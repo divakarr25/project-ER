@@ -42,7 +42,14 @@ body {
     text-align: left;
 }
 
-.upload-section,
+.upload-section{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+}
 .export-buttons {
     display: flex;
     flex-wrap: wrap;
