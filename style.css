@@ -7,6 +7,8 @@
 
 body {
     font-family: 'Noto Sans Tamil', sans-serif;
+    /* font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; */
+    /* font-family: 'Catamaran', sans-serif; */
     background-color: #f3f4f6;
     color: #333;
     padding: 20px;
@@ -190,8 +192,10 @@ tr:nth-child(even) {
 
     .upload-section,
     .export-buttons {
+        display: flex;
         flex-direction: column;
-        align-items: stretch;
+        justify-content: center;
+        margin-bottom: 30px;
     }
 
     button {
@@ -213,8 +217,7 @@ tr:nth-child(even) {
     th,
     td {
         border: 1px solid #ccc;
-        padding: 20px 5px;
-        /* margin: 30px; */
+        padding: 20px 0px;
         text-align: center;
         white-space: nowrap;
         /* word-wrap: break-word; */
@@ -243,6 +246,8 @@ tr:nth-child(even) {
 
     .file-input-group {
         display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     #minAge,

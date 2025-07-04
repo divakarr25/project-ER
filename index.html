@@ -13,6 +13,7 @@
     <!-- font link -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
 
+
 </head>
 
 <body>
@@ -36,12 +37,16 @@
             <input type="file" id="jsonFile" accept="application/json">
             <button onclick="handleJSONUpload()" class="export-buttons">📁 Upload JSON</button>
         </div>
+    </div>
+
+    <div class="upload-section">
         <div class="file-input-group">
             <input type="file" id="excelFile" accept=".xlsx,.xls">
             <button onclick="handleExcelUpload()" class="export-buttons">📊 Upload
                 Excel</button>
         </div>
     </div>
+
     <div class="upload-section">
         <button onclick="clearAllData()" class="export-buttons">🗑️ Clear All</button>
     </div>
@@ -100,11 +105,10 @@
             <tbody id="tableBody"></tbody>
         </table>
     </div>
-
-    <script src="./script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>

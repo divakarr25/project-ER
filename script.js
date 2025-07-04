@@ -163,17 +163,7 @@ function updateLocalStorage() {
     localStorage.setItem("voterListData", JSON.stringify(data));
 }
 
-// function clearAllData() {
-//     if (confirm("⚠️ Warning: This will remove all entries permanently. Do you want to proceed?")) {
-//         localStorage.removeItem("voterListData");
-//         document.getElementById("tableBody").innerHTML = "";
-//         data.length = 0;
-//         serialNumber = 1;
-//         showStatus("All data cleared successfully.");
-//     }
-// }
-
-function clearJsonData() {
+function clearAllData() {
     if (confirm("⚠️ Warning: This will remove all entries permanently. Do you want to proceed?")) {
         localStorage.removeItem("voterListData");
         document.getElementById("tableBody").innerHTML = "";
@@ -182,21 +172,6 @@ function clearJsonData() {
         showStatus("All data cleared successfully.");
     }
 }
-
-function clearExcelData() {
-    if (confirm("⚠️ Warning: This will remove all entries permanently. Do you want to proceed?")) {
-        localStorage.removeItem("voterListData");
-        document.getElementById("tableBody").innerHTML = "";
-        data.length = 0;
-        serialNumber = 1;
-        showStatus("All data cleared successfully.");
-    }
-}
-
-
-
-
-
 
 function editRow(button) {
     const row = button.closest('tr');
@@ -435,14 +410,14 @@ function exportToPDF() {
 
     // Add title and header information with proper Tamil encoding
     doc.setFontSize(18);
-    doc.setFont('helvetica', 'bold');
+    doc.setFont('Noto Sans Tamil','sans-serif');
 
     // Title in both Tamil and English
     addTamilText(doc, 'வாக்காளர் பட்டியல்', 20, 20);
     doc.text('VOTER LIST', 80, 20);
 
     doc.setFontSize(12);
-    doc.setFont('helvetica', 'normal');
+    doc.setFont('Noto Sans Tamil','sans-serif');
 
     // Header information with Tamil support
     addTamilText(doc, 'சட்டமன்றத் தொகுதியின் எண் மற்றும் பெயர்: 167-மன்னார்குடி', 20, 32);
@@ -540,14 +515,14 @@ function exportToPDF() {
     // Add footer with summary in both languages
     const finalY = doc.lastAutoTable.finalY || 150;
     doc.setFontSize(11);
-    doc.setFont('helvetica', 'bold');
+    doc.setFont('Noto Sans Tamil','sans-serif');
 
     addTamilText(doc, `மொத்த பதிவுகள்: ${rows.length}`, 20, finalY + 15);
     doc.text(`Total Records: ${rows.length}`, 80, finalY + 15);
 
     // Add certification text
     doc.setFontSize(9);
-    doc.setFont('helvetica', 'normal');
+    doc.setFont('Noto Sans Tamil','sans-serif');
     addTamilText(doc, 'இந்த பட்டியல் அதிகாரப்பூர்வ வாக்காளர் பட்டியலிலிருந்து தயாரிக்கப்பட்டது', 20, finalY + 25);
     doc.text('This list is prepared from the official electoral roll', 20, finalY + 32);
 
@@ -556,7 +531,7 @@ function exportToPDF() {
     for (let i = 1; i <= pageCount; i++) {
         doc.setPage(i);
         doc.setFontSize(8);
-        doc.setFont('helvetica', 'normal');
+        doc.setFont('Noto Sans Tamil','sans-serif');
 
         // Page number in Tamil and English
         addTamilText(doc, `பக்கம் ${i} / ${pageCount}`, doc.internal.pageSize.width - 60, doc.internal.pageSize.height - 10);
